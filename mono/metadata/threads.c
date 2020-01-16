@@ -3387,6 +3387,8 @@ thread_detach (MonoThreadInfo *info)
 	g_assert (info);
 	g_assert (mono_thread_info_is_current (info));
 
+	mono_gc_thread_detach (info);
+
 	if (!mono_thread_info_try_get_internal_thread_gchandle (info, &gchandle))
 		return;
 
@@ -3394,8 +3396,6 @@ thread_detach (MonoThreadInfo *info)
 	g_assert (internal);
 
 	mono_thread_detach_internal (internal);
-
-	mono_gc_thread_detach (info);
 }
 
 static void
