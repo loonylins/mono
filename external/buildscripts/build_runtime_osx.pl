@@ -149,10 +149,10 @@ for my $arch (@arches)
 {
 	print "Building for architecture: $arch\n";
 
-	my $macversion = '10.9';
+	my $macversion = '10.6';
 	my $sdkversion = '10.11';
 	if ($arch eq 'x86_64') {
-		$macversion = '10.11';
+		$macversion = '10.6';
 	}
 
 	# Set up clang toolchain
