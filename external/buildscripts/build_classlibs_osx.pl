@@ -74,9 +74,9 @@ if (not $skipbuild)
 
 	$ENV{'CC'} = "$sdkPath/../usr/bin/clang";
 	$ENV{'CXX'} = "$sdkPath/../usr/bin/clang++";
-	$ENV{CFLAGS}  = "$ENV{CFLAGS} -arch i386 -D_XOPEN_SOURCE";
+	$ENV{CFLAGS}  = "$ENV{CFLAGS} -arch x86_64 -D_XOPEN_SOURCE";
 	$ENV{CXXFLAGS}  = "$ENV{CXXFLAGS} $ENV{CFLAGS}";
-	$ENV{LDFLAGS}  = "$ENV{LDFLAGS} -arch i386";
+	$ENV{LDFLAGS}  = "$ENV{LDFLAGS} -arch x86_64";
 	if ($^O eq 'darwin')
 	{
 		$ENV{'MACSDKOPTIONS'} = "$ENV{CFLAGS} -mmacosx-version-min=$macversion -isysroot $sdkPath";
